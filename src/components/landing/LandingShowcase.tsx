@@ -99,6 +99,43 @@ export default function LandingShowcase() {
           ))}
         </div>
 
+        {/* Authentic God of War OST Video Feature Card */}
+        <div className="stagger-reveal mb-8 p-6 sm:p-8 rounded-sm border border-[#C1440E]/50 bg-gradient-to-r from-[#18110c] via-[#0A0A0B] to-[#18110c] backdrop-blur-xl shadow-2xl">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
+            <div className="w-full lg:w-1/2 aspect-video rounded-sm overflow-hidden border border-[#C1440E]/40 relative bg-black shadow-[0_0_30px_rgba(193,68,14,0.35)]">
+              <video
+                src="/model/god_of_war_ost.mp4"
+                controls
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="w-full lg:w-1/2 flex flex-col justify-center">
+              <div className="text-xs font-mono tracking-[0.3em] text-[#C1440E] uppercase mb-2 flex items-center gap-2">
+                <span>ᛟ</span>
+                <span>AUTHENTIC GOD OF WAR OST & VISUALS</span>
+              </div>
+              <h3 className="font-cinzel text-2xl sm:text-3xl font-black text-[#E8E2D6] mb-3">
+                CINEMATIC SOUNDTRACK INCLUDED
+              </h3>
+              <p className="font-inter text-xs sm:text-sm text-[#6B7A8F] leading-relaxed mb-6">
+                Feel the thunder of Spartan war drums and the choir of God of War. Built directly into your portfolio with ambient background music mode and full cinematic theater playback.
+              </p>
+              <div className="flex flex-wrap items-center gap-4">
+                <button
+                  onClick={() => {
+                    window.dispatchEvent(new CustomEvent("spartan:open-cinema"));
+                  }}
+                  className="px-5 py-2.5 bg-[#C1440E] text-[#E8E2D6] font-cinzel text-xs font-bold tracking-widest uppercase rounded-sm hover:bg-[#d94d12] hover:shadow-[0_0_20px_#C1440E] transition-all cursor-pointer flex items-center gap-2"
+                >
+                  <span>🎬 Open Cinema Theater</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Live Interactive Combat Test Callout */}
         <div className="stagger-reveal p-6 rounded-sm border border-[#E8E2D6]/15 bg-[#0A0A0B]/80 backdrop-blur-md flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs font-mono">
           <div className="flex items-center gap-3 text-[#E8E2D6]">

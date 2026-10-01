@@ -81,7 +81,18 @@ export default function LandingHero() {
             title="Click to test the dual sword combat animation"
           >
             <span className="text-[#FF3300] group-hover:text-white">⚔</span>
-            <span>Test Blade Strike</span>
+            <span>Blade Strike</span>
+          </button>
+
+          <button
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent("spartan:open-cinema"));
+            }}
+            className="group px-6 py-4 border border-[#E8E2D6]/20 bg-[#0A0A0B]/80 text-[#E8E2D6] font-inter text-xs font-bold tracking-[0.2em] uppercase rounded-sm hover:border-[#C1440E] hover:text-[#C1440E] transition-all cursor-pointer flex items-center gap-2"
+            title="Watch the God of War OST Video"
+          >
+            <span>🎬</span>
+            <span>God of War OST</span>
           </button>
         </div>
 

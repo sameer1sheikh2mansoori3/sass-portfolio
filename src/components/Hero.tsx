@@ -84,7 +84,18 @@ export default function Hero({ data }: HeroProps = {}) {
             title="Trigger dual sword slash animation (or press Space / click canvas)"
           >
             <span className="text-[#FF3300] group-hover:text-white transition-colors">⚔</span>
-            <a href="/signup">Unleash Blades</a>
+            <span>Unleash Blades</span>
+          </button>
+
+          <button
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent("spartan:open-cinema"));
+            }}
+            className="px-6 py-4 border border-[#E8E2D6]/20 bg-[#0A0A0B]/70 backdrop-blur-md text-[#E8E2D6] font-inter text-xs font-bold tracking-[0.2em] uppercase rounded-sm hover:border-[#C1440E] hover:text-[#C1440E] transition-all cursor-pointer flex items-center gap-2"
+            title="Watch the God of War OST Video"
+          >
+            <span>🎬</span>
+            <span>OST Cinema</span>
           </button>
 
           <button

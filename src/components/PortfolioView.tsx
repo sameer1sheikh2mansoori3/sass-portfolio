@@ -29,8 +29,10 @@ export default function PortfolioView({ portfolio, banner }: PortfolioViewProps)
       {/* 1. Custom Lagging Ember Cursor */}
       <Cursor />
 
+      {/* 2. Real-time Telemetry HUD & God of War OST Audio Controls */}
+      <HUD />
 
-      {/* 2. Sticky Navigation Bar */}
+      {/* 3. Sticky Navigation Bar */}
       <Navbar displayName={portfolio.hero.name} />
 
       {/* 3. God of War Three.js Cinematic Scene */}
