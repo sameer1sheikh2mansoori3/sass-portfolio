@@ -3,12 +3,20 @@ import { notFound } from "next/navigation";
 import { dbService } from "@/lib/dbService";
 import PortfolioView from "@/components/PortfolioView";
 
+export const dynamic = "force-dynamic";
+
 interface UserPageProps {
   params: Promise<{ username: string }>;
 }
 
 export async function generateMetadata({ params }: UserPageProps) {
-  const { username } = await params;
+  const resolved = await params;
+  const username = resolved?.username;
+  if (!username) {
+    return {
+      title: "Warrior Chronicle // Spartan Portfolio",
+    };
+  }
   const portfolio = await dbService.getPortfolio(username);
 
   if (!portfolio) {
@@ -28,8 +36,9 @@ export async function generateMetadata({ params }: UserPageProps) {
 }
 
 export default async function UserPortfolioPage({ params }: UserPageProps) {
-  const { username } = await params;
-  const cleanUsername = username ? username.toLowerCase().trim() : "";
+  const resolved = await params;
+  const username = resolved?.username;
+  const cleanUsername = username ? String(username).toLowerCase().trim() : "";
 
   const portfolio = await dbService.getPortfolio(cleanUsername);
 

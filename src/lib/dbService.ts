@@ -52,8 +52,10 @@ function saveFallbackStore(store: { users: StoredUser[]; portfolios: Record<stri
 }
 
 export const dbService = {
-  async findUserByUsername(username: string): Promise<{ id: string; username: string; email: string; passwordHash: string } | null> {
+  async findUserByUsername(username?: string): Promise<{ id: string; username: string; email: string; passwordHash: string } | null> {
+    if (!username || typeof username !== "string") return null;
     const cleanUsername = username.toLowerCase().trim();
+    if (!cleanUsername) return null;
     const mongo = await connectDB();
     if (mongo) {
       try {
@@ -77,8 +79,10 @@ export const dbService = {
     return found || null;
   },
 
-  async findUserByEmail(email: string): Promise<{ id: string; username: string; email: string; passwordHash: string } | null> {
+  async findUserByEmail(email?: string): Promise<{ id: string; username: string; email: string; passwordHash: string } | null> {
+    if (!email || typeof email !== "string") return null;
     const cleanEmail = email.toLowerCase().trim();
+    if (!cleanEmail) return null;
     const mongo = await connectDB();
     if (mongo) {
       try {
@@ -161,8 +165,10 @@ export const dbService = {
     return { id: createdId, username: cleanUsername, email: cleanEmail };
   },
 
-  async getPortfolio(username: string): Promise<PortfolioDataType | null> {
+  async getPortfolio(username?: string): Promise<PortfolioDataType | null> {
+    if (!username || typeof username !== "string") return null;
     const cleanUsername = username.toLowerCase().trim();
+    if (!cleanUsername) return null;
     const mongo = await connectDB();
     if (mongo) {
       try {
