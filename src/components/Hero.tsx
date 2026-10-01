@@ -84,7 +84,7 @@ export default function Hero({ data }: HeroProps = {}) {
             title="Trigger dual sword slash animation (or press Space / click canvas)"
           >
             <span className="text-[#FF3300] group-hover:text-white transition-colors">⚔</span>
-            <span>Unleash Blades</span>
+            <a href="/signup">Unleash Blades</a>
           </button>
 
           <button

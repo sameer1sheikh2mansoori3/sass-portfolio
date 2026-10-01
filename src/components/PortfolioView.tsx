@@ -24,21 +24,19 @@ export default function PortfolioView({ portfolio, banner }: PortfolioViewProps)
   return (
     <div className="relative min-h-screen w-full bg-[#0A0A0B] text-[#E8E2D6] selection:bg-[#C1440E] selection:text-[#E8E2D6] overflow-x-hidden">
       {/* Optional Top Warrior Banner */}
-      {banner}
+      {banner ? <div key="portfolio-banner-slot">{banner}</div> : null}
 
       {/* 1. Custom Lagging Ember Cursor */}
       <Cursor />
 
-      {/* 2. Real-time Telemetry HUD & Audio Toggle */}
-      <HUD />
 
-      {/* 3. Sticky Navigation Bar */}
+      {/* 2. Sticky Navigation Bar */}
       <Navbar displayName={portfolio.hero.name} />
 
-      {/* 4. God of War Three.js Cinematic Scene */}
+      {/* 3. God of War Three.js Cinematic Scene */}
       <Scene />
 
-      {/* 5. Lenis Smooth Scroll & GSAP ScrollTrigger Choreography */}
+      {/* 4. Lenis Smooth Scroll & GSAP ScrollTrigger Choreography */}
       <ScrollController />
 
       {/* 6. Atmospheric Post-Processing Overlays */}

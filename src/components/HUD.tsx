@@ -125,52 +125,9 @@ export default function HUD() {
         <span className="text-[#E8E2D6]">SLASH [SPACE / CLICK]</span>
       </button>
 
-      {/* Sound Toggle Button */}
-      <button
-        onClick={toggleSound}
-        className="pointer-events-auto px-3 py-1.5 rounded-full border border-[#E8E2D6]/20 bg-[#0A0A0B]/80 backdrop-blur-md text-[#E8E2D6] hover:border-[#C1440E] hover:text-[#C1440E] transition-all cursor-pointer flex items-center gap-1.5"
-      >
-        <span>{soundOn ? "🔊" : "🔇"}</span>
-        <span>{soundOn ? "SOUND: ON" : "SOUND: OFF"}</span>
-      </button>
+   
 
-      {/* Telemetry Capsule */}
-      <div className="flex items-center gap-3 px-3.5 py-1.5 rounded-full border border-[#E8E2D6]/15 bg-[#0A0A0B]/85 backdrop-blur-md text-[#E8E2D6] shadow-lg">
-        <div className="flex items-center gap-2">
-          <span className="text-[#6B7A8F]">STATE:</span>
-          <span
-            className={`font-bold transition-colors duration-200 ${
-              animState === "slash"
-                ? "text-[#E8E2D6] bg-[#C1440E] px-2 py-0.5 rounded text-[9px] shadow-[0_0_10px_#C1440E]"
-                : animState === "run"
-                ? "text-[#C1440E] font-black"
-                : animState === "walk"
-                ? "text-[#D4AF37]"
-                : "text-[#6B7A8F]"
-            }`}
-          >
-            {animState.toUpperCase()}
-          </span>
-        </div>
-
-        <span className="text-[#E8E2D6]/20">|</span>
-
-        <div className="flex items-center gap-1.5">
-          <span className="text-[#6B7A8F]">VEL:</span>
-          <span className="w-8 text-right font-mono text-[#E8E2D6]">
-            {velocity.toFixed(2)}
-          </span>
-        </div>
-
-        <span className="text-[#E8E2D6]/20">|</span>
-
-        <div className="flex items-center gap-1.5">
-          <span className="text-[#6B7A8F]">MARCH:</span>
-          <span className="w-6 text-right font-mono text-[#C1440E]">
-            {progress}%
-          </span>
-        </div>
-      </div>
+    
     </div>
     </>
   );

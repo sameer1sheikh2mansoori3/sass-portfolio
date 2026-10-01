@@ -189,6 +189,14 @@ export const dbService = {
       return item.data;
     }
 
+    // Default pre-seeded warrior chronicles for instant demo
+    if (cleanUsername === "kratos" || cleanUsername === "demo") {
+      return createDefaultPortfolio(
+        cleanUsername,
+        cleanUsername === "kratos" ? "KRATOS OF SPARTA" : "DEMO WARRIOR"
+      );
+    }
+
     return null;
   },
 

@@ -32,13 +32,13 @@ export default function About({ data }: AboutProps = {}) {
             {about.bioLines.map((line, idx) => (
               <div
                 key={idx}
-                className="stagger-reveal group p-6 sm:p-7 rounded-sm border border-[#E8E2D6]/10 bg-[#0A0A0B]/80 backdrop-blur-md transition-all duration-300 hover:border-[#C1440E]/60 hover:bg-[#0A0A0B]/95 shadow-xl"
+                className="stagger-reveal group p-6 sm:p-7 rounded-sm border border-[#E8E2D6]/10  bg-[#0A0A0B]/80 backdrop-blur-md transition-all duration-300 hover:border-[#C1440E]/60 hover:bg-[#0A0A0B]/95 shadow-xl"
               >
                 <div className="flex items-start gap-5">
-                  <span className="font-cinzel text-base sm:text-lg font-bold text-[#C1440E] opacity-90 mt-0.5">
+                  <span className="font-cinzel text-base sm:text-lg font-bold text-white opacity-90 mt-0.5">
                     0{idx + 1}
                   </span>
-                  <p className="font-cinzel text-base sm:text-lg md:text-xl text-[#E8E2D6] leading-relaxed">
+                  <p className="font-cinzel text-base sm:text-lg md:text-xl text-white leading-relaxed">
                     {line}
                   </p>
                 </div>
