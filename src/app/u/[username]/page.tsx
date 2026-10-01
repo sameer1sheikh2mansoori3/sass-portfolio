@@ -68,13 +68,10 @@ export default async function UserPortfolioPage({ params }: UserPageProps) {
   }
 
   const shareBanner = (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-[#C1440E]/20 border-b border-[#C1440E]/40 backdrop-blur-md px-4 py-2 flex items-center justify-between text-[11px] font-mono text-[#E8E2D6]">
-      <div className="flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-[#C1440E] animate-ping" />
-        <span className="text-[#E8E2D6] font-bold">
-          WARRIOR CHRONICLE: @{cleanUsername.toUpperCase()}
-        </span>
-      </div>
+    <div
+      key="warrior-share-banner"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#C1440E]/20 border-b border-[#C1440E]/40 backdrop-blur-md px-4 py-2 flex items-center justify-between text-[11px] font-mono text-[#E8E2D6]"
+    >
       <Link
         href="/signup"
         className="px-3 py-1 rounded bg-[#C1440E] text-[#E8E2D6] hover:bg-[#d94d12] font-semibold text-[10px] tracking-wider uppercase transition-colors"
@@ -84,5 +81,5 @@ export default async function UserPortfolioPage({ params }: UserPageProps) {
     </div>
   );
 
-  return <PortfolioView portfolio={portfolio} banner={shareBanner} />;
+  return <PortfolioView portfolio={portfolio}  />;
 }

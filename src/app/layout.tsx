@@ -36,9 +36,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${cinzel.variable} ${inter.variable} bg-[#0A0A0B] text-[#E8E2D6]`}
     >
-      <body className="bg-[#0A0A0B] text-[#E8E2D6] antialiased selection:bg-[#C1440E] selection:text-[#E8E2D6]">
+      <body
+        suppressHydrationWarning
+        className="bg-[#0A0A0B] text-[#E8E2D6] antialiased selection:bg-[#C1440E] selection:text-[#E8E2D6]"
+      >
         {children}
       </body>
     </html>
