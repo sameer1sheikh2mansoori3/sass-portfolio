@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 import { dbService } from "@/lib/dbService";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ username: string }> }
 ) {
   try {
-    const { username } = await params;
+    const resolved = await params;
+    const username = resolved?.username;
     if (!username) {
       return NextResponse.json({ error: "Username parameter missing" }, { status: 400 });
     }

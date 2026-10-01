@@ -1,0 +1,21 @@
+name: Spartan Citadel Keep-Alive Cron
+
+on:
+  schedule:
+    # Runs every 5 minutes (standard GitHub cron frequency)
+    - cron: "*/5 * * * *"
+  workflow_dispatch: # Allows manual trigger from GitHub Actions UI
+
+jobs:
+  ping-citadel:
+    name: Ping Deployed Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Keep-Alive Signal to Citadel
+        run: |
+          TARGET_URL="${{ secrets.DEPLOYED_URL }}"
+          if [ -z "$TARGET_URL" ]; then
+            TARGET_URL="https://your-app.onrender.com"
+          fi
+          echo "Pinging: ${TARGET_URL}/api/health"
+          curl -sS -i "${TARGET_URL}/api/health" || echo "Ping dispatched"
